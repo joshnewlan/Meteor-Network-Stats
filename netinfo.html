@@ -1,0 +1,38 @@
+<head>
+  <title>netinfo</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Network stats</h1>
+    <div class="col-md-12">
+      {{> netinfo}}
+    </div>
+      
+  </div>
+</body>
+
+<template name="netinfo">
+<table class="table">
+  <thead>
+    <tr>
+      <td>Interface</td>
+      <td>Bytes Sent</td>
+      <td>Bytes Received</td>
+      <td>Sent Rate</td>
+      <td>Received Rate</td>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each netInfo}}
+    <tr>
+      <td><strong>{{ifname}}</strong></td>
+      <td>{{sent}}</td>
+      <td>{{receieved}}</td>
+      <td>{{sentRate}}/s</td>
+      <td>{{recvRate}}/s</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+</template>
