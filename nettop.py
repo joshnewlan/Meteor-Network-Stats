@@ -1,5 +1,5 @@
 """
-Collect network traffic information similar to nettop. Borrows heavily from
+Borrows heavily from
 Giampaolo Rodola's nettop simulator here:
 # https://github.com/giampaolo/psutil/blob/master/examples/nettop.py
 # Copyright (c) 2009, Giampaolo Rodola'. All rights reserved.
