@@ -35,7 +35,8 @@ jobs:
           git fetch
           git checkout nightly
           git merge -X ours master --allow-unrelated-histories
-          now=$(date +'%Y%m%d') | sed -i "s/.$/\.dev$now'/" nettop.py
+          now=$(date +'%Y%m%d') 
+          sed -i "s/.$/\.dev$now'/" nettop.py
           git add *
           git commit -m "Updated nightly version"
           git push
