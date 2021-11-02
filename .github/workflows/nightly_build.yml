@@ -25,5 +25,5 @@ jobs:
       with:
         path: ${{ env.home}}/nettop.py
         contents: |
-          echo "Hello World!"
+          sudo echo "Hello World!"
         write-mode: overwrite
