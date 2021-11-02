@@ -29,3 +29,5 @@ jobs:
           echo "New nettop" > nettop.py
           git add *
           git commit -m "added new nettop"
+          git status
+          git push
