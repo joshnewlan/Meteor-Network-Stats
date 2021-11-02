@@ -40,4 +40,4 @@ jobs:
           git add *
           git commit -m "added new nettop"
           git status
-          git push nightly
+          git push
