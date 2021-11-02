@@ -9,6 +9,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  
+#   - uses: actions/checkout@v2
+#     with:
+#       # The branch, tag or SHA to checkout. When checking out the repository that
+#       # triggered a workflow, this defaults to the reference or SHA for that event.
+#       # Otherwise, uses the default branch.
+#       ref: 'nightly'
+  
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -24,6 +32,7 @@ jobs:
         run: |
           git config user.email "joshuanewlan@gmail.com"
           git config user.name "Joshua Newlan"
+          git fetch
           git checkout nightly
           git merge master
           rm nettop.py
