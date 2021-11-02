@@ -28,16 +28,28 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Merge master branch into nightly branch and update package info
         run: |
           git config user.email "joshuanewlan@gmail.com"
           git config user.name "Joshua Newlan"
           git fetch
           git checkout nightly
           git merge master --allow-unrelated-histories
-          rm nettop.py
-          echo 'New nettop' >> nettop.py
+          now=$(printf "%(%Y%m%d)T") | sed -i "s/.$/\.dev$now'/" nettop.py
           git add *
-          git commit -m "added new nettop"
-          git status
+          git commit -m "Updated nightly version"
           git push
+      
+# # Runs a set of commands using the runners shell
+#       - name: Merge master branch into nightly branch and update package info
+#         run: |
+#           git config user.email "joshuanewlan@gmail.com"
+#           git config user.name "Joshua Newlan"
+#           git fetch
+#           git checkout nightly
+#           git merge master --allow-unrelated-histories
+#           now=$(printf "%(%F_%H%M%S)T") | sed -i "/__version__ = /s/'.*'/'nightly-$now'/" nettop.py
+          
+#           git add *
+#           git commit -m "Updated nightly version"
+#           git push
