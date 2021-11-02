@@ -24,11 +24,11 @@ jobs:
         run: |
           git config user.email "joshuanewlan@gmail.com"
           git config user.name "Joshua Newlan"
-          git pull nightly
+          git checkout nightly
           git merge master
           rm nettop.py
           echo 'New nettop' >> nettop.py
           git add *
           git commit -m "added new nettop"
           git status
-          git push --set-upstream origin nightly
+          git push nightly
