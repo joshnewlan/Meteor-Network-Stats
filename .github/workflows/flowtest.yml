@@ -36,7 +36,7 @@ jobs:
           git checkout nightly
           git reset --hard master
           now=$(date +'%Y%m%d') 
-          sed -i "$s/.$/\.dev$now'/" nettop.py
+          sed -i "$ s/.$/\.dev$now'/" nettop.py
           git add *
           git commit -m "Updated nightly version"
           git push --force
