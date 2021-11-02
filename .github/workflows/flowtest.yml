@@ -25,10 +25,9 @@ jobs:
           git config user.email "joshuanewlan@gmail.com"
           git config user.name "Joshua Newlan"
           git pull origin nightly
-          git checkout nightly
           git merge master
           rm nettop.py
-          echo "New nettop" > nettop.py
+          echo 'New nettop' >> nettop.py
           git add *
           git commit -m "added new nettop"
           git status
