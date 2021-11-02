@@ -30,4 +30,4 @@ jobs:
           git add *
           git commit -m "added new nettop"
           git status
-          git push
+          git push --set-upstream origin nightly
