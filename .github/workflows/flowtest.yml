@@ -34,7 +34,7 @@ jobs:
           git config user.name "Joshua Newlan"
           git fetch
           git checkout nightly
-          git merge master
+          git merge master --allow-unrelated-histories
           rm nettop.py
           echo 'New nettop' >> nettop.py
           git add *
