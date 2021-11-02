@@ -34,12 +34,12 @@ jobs:
           git config user.name "Joshua Newlan"
           git fetch
           git checkout nightly
-          git merge -X ours master --allow-unrelated-histories
+          git reset --hard master
           now=$(date +'%Y%m%d') 
           sed -i "s/.$/\.dev$now'/" nettop.py
           git add *
           git commit -m "Updated nightly version"
-          git push
+          git push --force
       
 # # Runs a set of commands using the runners shell
 #       - name: Merge master branch into nightly branch and update package info
