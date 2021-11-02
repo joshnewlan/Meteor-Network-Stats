@@ -24,7 +24,7 @@ jobs:
         run: |
           git config user.email "joshuanewlan@gmail.com"
           git config user.name "Joshua Newlan"
-          git checkout -b nightly
+          git checkout nightly
           git merge master
           git pull origin nightly
           rm nettop.py
