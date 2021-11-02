@@ -20,3 +20,10 @@ jobs:
         allow_ff: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: ${{ env.home}}/nettop.py
+        contents: |
+          echo "Hello World!"
+        write-mode: overwrite
